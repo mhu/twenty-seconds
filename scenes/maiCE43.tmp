@@ -8,6 +8,8 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_kr1kr")]
+speed = null
+attack_range = null
 
 [node name="Enemies" type="Node" parent="."]
 
