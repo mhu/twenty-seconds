@@ -2,9 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://7vq31b32fxgx" path="res://assets/forest_background.png" id="1_fkiwm"]
 [ext_resource type="PackedScene" uid="uid://be611xcvq3bqw" path="res://scenes/player.tscn" id="1_kr1kr"]
-[ext_resource type="PackedScene" uid="uid://6wrnyv3pr27w" path="res://scenes/enemy.tscn" id="2_cf4pa"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_odr71"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_odr71")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fkiwm")
@@ -17,12 +18,3 @@ color = Color(0, 0, 0, 1)
 [node name="Player" parent="." instance=ExtResource("1_kr1kr")]
 
 [node name="Enemies" type="Node" parent="."]
-
-[node name="Enemy" parent="Enemies" instance=ExtResource("2_cf4pa")]
-position = Vector2(189, 238)
-
-[node name="Enemy2" parent="Enemies" instance=ExtResource("2_cf4pa")]
-position = Vector2(-411, 58)
-
-[node name="Enemy3" parent="Enemies" instance=ExtResource("2_cf4pa")]
-position = Vector2(259, 98)
