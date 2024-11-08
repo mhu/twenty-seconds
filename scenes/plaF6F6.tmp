@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://be611xcvq3bqw"]
+
+[ext_resource type="Texture2D" uid="uid://bpnw2ne65u4ra" path="res://assets/blob.png" id="1_4ghac"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_k20lo"]
+[ext_resource type="Texture2D" uid="uid://cmcu7r3wdl8gf" path="res://assets/lantern.png" id="3_u6w71"]
+[ext_resource type="Script" path="res://scripts/lantern.gd" id="4_loamd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5loar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4ghac")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gqhh6"]
+radius = 7.0
+
+[sub_resource type="Gradient" id="Gradient_8f23i"]
+offsets = PackedFloat32Array(0, 0.655844)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wjfrn"]
+gradient = SubResource("Gradient_8f23i")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_k20lo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5loar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gqhh6")
+
+[node name="Lantern" type="Sprite2D" parent="."]
+position = Vector2(-13, 2.5)
+texture = ExtResource("3_u6w71")
+
+[node name="PointLight2D" type="PointLight2D" parent="Lantern"]
+position = Vector2(0, 0.5)
+scale = Vector2(4, 4)
+texture = SubResource("GradientTexture2D_wjfrn")
+script = ExtResource("4_loamd")

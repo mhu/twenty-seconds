@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4demdpsbiqu4"]
+[gd_scene load_steps=4 format=3 uid="uid://c4demdpsbiqu4"]
 
+[ext_resource type="Texture2D" uid="uid://7vq31b32fxgx" path="res://assets/forest_background.png" id="1_fkiwm"]
 [ext_resource type="PackedScene" uid="uid://be611xcvq3bqw" path="res://scenes/player.tscn" id="1_kr1kr"]
 [ext_resource type="PackedScene" uid="uid://6wrnyv3pr27w" path="res://scenes/enemy.tscn" id="2_cf4pa"]
 
 [node name="Main" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fkiwm")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
