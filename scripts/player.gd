@@ -2,12 +2,14 @@ extends CharacterBody2D
 
 @onready var enemies := $"../Enemies"
 
-@export var speed := 500.0
-@export var attack_range := 200.0
+@export var speed: float
+@export var attack_range: float
 
 
 func _ready() -> void:
-    pass
+    var settings = LevelSingleton.get_settings_for_current_level()
+    speed = settings.player_speed
+    attack_range = settings.player_attack_range
 
 
 func _process(_delta: float) -> void:

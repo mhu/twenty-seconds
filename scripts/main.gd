@@ -6,6 +6,10 @@ extends Node
 var spawn_distance_to_player: float = 300.0
 
 
+func _init() -> void:
+    LevelSingleton.current_level = 2
+
+
 func _ready() -> void:
     var timer := Timer.new()
     add_child(timer)
