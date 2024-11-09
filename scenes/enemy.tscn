@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://6wrnyv3pr27w"]
 
 [ext_resource type="Texture2D" uid="uid://u7vvlwci1y5m" path="res://assets/blob_enemy.png" id="1_k4ga5"]
-[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_kev1i"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_kev1i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kbvaa"]
 animations = [{
