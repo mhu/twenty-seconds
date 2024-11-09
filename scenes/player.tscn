@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://be611xcvq3bqw"]
+[gd_scene load_steps=16 format=3 uid="uid://be611xcvq3bqw"]
 
 [ext_resource type="Texture2D" uid="uid://bpnw2ne65u4ra" path="res://assets/blob.png" id="1_4ghac"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_k20lo"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/ray_cast_2d.gd" id="6_jerw0"]
 [ext_resource type="Texture2D" uid="uid://boahi6drvgc80" path="res://assets/wand_small.png" id="7_4a56w"]
 [ext_resource type="Script" path="res://scripts/flash.gd" id="7_83bm0"]
+[ext_resource type="Texture2D" uid="uid://d302ocw45q53j" path="res://assets/heart_full.png" id="9_x1ew6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5loar"]
 animations = [{
@@ -44,6 +45,9 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_k20lo")
+health = null
+speed = null
+attack_range = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5loar")
@@ -81,3 +85,17 @@ visible = false
 position = Vector2(0, 0.5)
 texture = SubResource("GradientTexture2D_6vo0p")
 script = ExtResource("7_83bm0")
+
+[node name="Health" type="Node2D" parent="."]
+position = Vector2(0, 20)
+
+[node name="Heart1" type="Sprite2D" parent="Health"]
+position = Vector2(-10, 0)
+texture = ExtResource("9_x1ew6")
+
+[node name="Heart2" type="Sprite2D" parent="Health"]
+texture = ExtResource("9_x1ew6")
+
+[node name="Heart3" type="Sprite2D" parent="Health"]
+position = Vector2(10, 0)
+texture = ExtResource("9_x1ew6")

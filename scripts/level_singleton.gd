@@ -15,5 +15,5 @@ const LEVEL_SETTINGS = [
     }
 ]
 
-func get_settings_for_current_level():
+func get_settings_for_current_level() -> Dictionary:
     return LEVEL_SETTINGS[current_level - 1]
