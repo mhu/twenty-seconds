@@ -10,7 +10,7 @@ func _process(_delta: float) -> void:
     if not Input.is_action_just_pressed("fire"):
         return
 
-    var collider = get_collider()
+    var collider := get_collider()
 
     if not collider:
         return

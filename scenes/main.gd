@@ -7,7 +7,7 @@ var spawn_distance_to_player: float = 300.0
 
 
 func _ready() -> void:
-    var timer = Timer.new()
+    var timer := Timer.new()
     add_child(timer)
     timer.wait_time = 1.0
     timer.timeout.connect(_spawn_enemy)
@@ -21,12 +21,12 @@ func _process(_delta: float) -> void:
 
 
 func _spawn_enemy() -> void:
-    var enemy = loaded_enemy.instantiate()
-    var enemy_position_x = [
+    var enemy: CharacterBody2D = loaded_enemy.instantiate()
+    var enemy_position_x := [
         player.position.x - spawn_distance_to_player,
         player.position.x + spawn_distance_to_player,
     ]
-    var enemy_position_y = [
+    var enemy_position_y := [
         player.position.y - spawn_distance_to_player,
         player.position.y + spawn_distance_to_player,
     ]
