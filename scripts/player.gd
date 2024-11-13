@@ -53,8 +53,9 @@ func get_closest_enemy_in_range() -> CharacterBody2D:
 
 
 func take_damage() -> void:
-    if health == 0:  # TODO: show game over screen
-        return
+    if health == 0:
+        get_tree().paused = true
+        $"/root/Main/GameOverScreen".visible = true  # TODO: turn this into a signal?
 
     if not damage_cooldown_timer.is_stopped():
         return
