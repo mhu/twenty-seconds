@@ -8,6 +8,7 @@ var spawn_distance_to_player: float = 300.0
 
 func _init() -> void:
     LevelSingleton.current_level = 1
+    LevelSingleton.start_level_timer()
 
 
 func _ready() -> void:
