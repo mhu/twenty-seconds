@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4demdpsbiqu4"]
+[gd_scene load_steps=6 format=3 uid="uid://c4demdpsbiqu4"]
 
 [ext_resource type="Texture2D" uid="uid://7vq31b32fxgx" path="res://assets/forest_background.png" id="1_fkiwm"]
 [ext_resource type="PackedScene" uid="uid://be611xcvq3bqw" path="res://scenes/player.tscn" id="1_kr1kr"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_odr71"]
 [ext_resource type="PackedScene" uid="uid://br6bqqwgdbpd0" path="res://scenes/game_over_screen.tscn" id="4_tfpm3"]
+[ext_resource type="Script" path="res://scenes/timer_label.gd" id="5_vajcg"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_odr71")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_fkiwm")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -26,3 +27,20 @@ offset_left = -676.0
 offset_top = -374.0
 offset_right = -476.0
 offset_bottom = -274.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+light_mask = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "20"
+horizontal_alignment = 1
+script = ExtResource("5_vajcg")

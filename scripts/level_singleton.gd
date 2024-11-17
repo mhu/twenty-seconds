@@ -1,6 +1,7 @@
 extends Node
 
 var current_level := 1
+var timer: Timer
 
 const GAME_SETTINGS = {
     "level_time_seconds": 20,
@@ -21,12 +22,16 @@ const LEVEL_SETTINGS = [
 
 
 func start_level_timer() -> void:
-    var timer := Timer.new()
+    timer = Timer.new()
     timer.wait_time = GAME_SETTINGS.level_time_seconds
     timer.set_one_shot(true)
     timer.autostart = true
     timer.timeout.connect(_on_level_timer_timeout)
     add_child(timer)
+
+
+func get_remaining_level_time() -> float:
+    return timer.time_left
 
 
 func _on_level_timer_timeout() -> void:
